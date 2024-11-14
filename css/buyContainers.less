@@ -1,0 +1,71 @@
+@-moz-document domain("trimps.github.io") {
+
+    .workBtn,
+    #fireBtn {
+        border-radius: 12px;
+        .button-style(@backdrop,
+            @shadow-border);
+    }
+
+    .thing {
+        &:hover {
+            .hover-effect()
+        }
+    }
+
+    .efficientYes {
+        &.thingColorCanAfford {
+            background-color: @trimpsGreen  !important;
+            box-shadow      : 0 0 10px 5px rgba(0, 255, 0, 0.5);
+            transition      : 0.3s ease-in-out;
+        }
+
+        &.thingColorCanNotAfford {
+            background-color: @trimpsYellow  !important;
+
+            transition: 0.3s ease-in-out;
+        }
+    }
+
+    /* Badge for new stuff, need to fix margin */
+    .alert.badge {
+        background: black !important;
+        box-shadow: none;
+    }
+
+    #outerBuyContainer>#buyTabs>ul#buyTabsUl.nav,
+    #buyTabs {
+
+        @borderRadius();
+    }
+
+    .thingColorCanNotAfford {
+        background-color: #00000070 !important;
+        color           : #f4a95f94;
+        width           : auto;
+        height          : 80px;
+        min-width       : 100px;
+        margin          : 1px;
+        border-radius   : 12px;
+    }
+
+    .thingColorCanAfford {
+        color        : white;
+        border-color : green;
+        width        : auto;
+        height       : 80px;
+        min-width    : 100px;
+        margin       : 1px;
+        border-radius: 12px;
+    }
+
+    .buyTab {
+        @backdrop-transparent();
+        border-radius: 12px 12px 0px 0px;
+
+        &>a {
+            border: none !important;
+            @borderRadius();
+        }
+    }
+}

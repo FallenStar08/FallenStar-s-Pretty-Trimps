@@ -1,0 +1,59 @@
+@-moz-document domain("trimps.github.io") {
+    #wood::before {
+        content          : "";
+        position         : absolute;
+        top              : 2%;
+        width            : 13%;
+        right            : 20%;
+        bottom           : 0;
+        background-image : @woodIcon  !important;
+        background-repeat: no-repeat !important;
+    }
+
+
+    #food::before {
+        content          : "";
+        position         : absolute;
+        top              : 2%;
+        width            : 13%;
+        right            : 20%;
+        bottom           : 0;
+        background-image : @foodIcon  !important;
+        background-repeat: no-repeat !important;
+    }
+
+    #metal::before {
+        content          : "";
+        position         : absolute;
+        top              : 2%;
+        width            : 13%;
+        right            : 20%;
+        bottom           : 0;
+        background-image : @metalIcon  !important;
+        background-repeat: no-repeat !important;
+    }
+
+    #science::before {
+        content          : "";
+        position         : absolute;
+        top              : 6%;
+        width            : 13%;
+        right            : 20%;
+        bottom           : 0;
+        background-image : @scienceIcon  !important;
+        background-repeat: no-repeat !important;
+    }
+
+    div.maxCenter:has(span#trimpTitle)::before {
+        content          : "";
+        position         : absolute;
+        top              : 6%;
+        width            : 25%;
+        right            : 0%;
+        bottom           : 0;
+        background-image : @impIcon  !important;
+        background-repeat: no-repeat !important;
+    }
+
+
+}

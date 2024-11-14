@@ -1,0 +1,74 @@
+/*PRIORITY : 2*/
+@-moz-document domain("trimps.github.io") {
+
+	/*BACKGROUND*/
+	#innerWrapper,
+	body {
+		background     : linear-gradient(135deg, #011d4a, #007eb9, #6b006f, #2f2f2f2e) !important;
+		background-size: 400% 400%;
+		animation      : gradientAnimation 10s ease infinite;
+	}
+
+	/*Progress Bars*/
+	.progress,
+	.innerFightBar,
+	.fightBar {
+		margin-left  : 3px !important;
+		margin-right : 3px !important;
+		border-radius: 50px;
+	}
+
+	#trapArea {
+		border: none !important;
+	}
+
+	.efficientNo,
+	.upgradeThing,
+	.jobThing,
+	.buildingThing,
+	.workBtn,
+	#fireBtn,
+	#food,
+	#wood,
+	#metal,
+	#science,
+	#battleContainer,
+	#miscColumn>*,
+	#queueContainer,
+	#outerBuyContainer,
+	#buyTabs,
+	#buyTabsUI,
+	#trimpsColumn>*,
+	#logColumn>*,
+	#numTabs>ul.nav>* {
+		@backdrop();
+	}
+
+	/* removes border around trap thing */
+	div#trimps,
+	#queueContainer {
+		border-radius: 12px !important;
+		@shadow-border();
+		border: none !important;
+	}
+
+	#battleContainer,
+	#outerBuyContainer,
+	#logContainer {
+		@resourceStyle();
+		@borderRadius();
+	}
+
+	/* Log top left & right*/
+	#StoryFilter {
+		border-radius: 12px 0px 0px 0px;
+	}
+
+	#logConfigBtn {
+		border-radius: 0px 12px 0px 0px !important;
+	}
+
+
+
+
+}
