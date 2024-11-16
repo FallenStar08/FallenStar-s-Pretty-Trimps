@@ -93,4 +93,35 @@
         color: #8e8e4c
     }
 
+    .fightBtn {
+        margin : 1px !important;
+        padding: 0px !important;
+        .button-style();
+        @shadow-border();
+
+        &.btn-primary,
+        &.btn-info {
+            background-color: @trimpsBlue  !important;
+        }
+
+        &.btn-success {
+            background-color: @trimpsGreen  !important;
+        }
+
+        &.btn-warning {
+            background-color: @trimpsOrange  !important;
+        }
+
+        &.heirloomsBtnColor {
+            background-color: @trimpsPurple  !important;
+        }
+
+        &.btn-default {
+            background-color: @trimpsDefault  !important
+        }
+    }
+
+    #voidAlert {
+        background-color: @trimpsPurple  !important;
+    }
 }
