@@ -1,10 +1,18 @@
 @-moz-document domain("trimps.github.io") {
+    .workBtn {
+        border-radius: 12px;
+        .button-style(@backdrop,
+            @shadow-border);
+    }
 
-    .workBtn,
     #fireBtn {
         border-radius: 12px;
         .button-style(@backdrop,
             @shadow-border);
+
+        &.fireBtnFiring {
+            background: @trimpsRed;
+        }
     }
 
     .thing {
