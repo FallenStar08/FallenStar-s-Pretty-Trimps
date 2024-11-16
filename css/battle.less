@@ -1,4 +1,6 @@
 @-moz-document domain("trimps.github.io") {
+    @import "variables.less";
+
     .battleCell {
         border: none !important;
         @shadow-border();
@@ -94,17 +96,22 @@
     }
 
     .fightBtn {
-        margin : 1px !important;
-        padding: 0px !important;
-        .button-style();
-        @shadow-border();
+        max-width: 99%;
+        padding  : 0px !important;
+        .button-style(@backdrop,
+            @shadow-border);
+
+        &:hover {
+            color: white
+        }
 
         &.btn-primary,
         &.btn-info {
             background-color: @trimpsBlue  !important;
         }
 
-        &.btn-success {
+        &.btn-success,
+        &.settingBtn1 {
             background-color: @trimpsGreen  !important;
         }
 
@@ -114,11 +121,28 @@
 
         &.heirloomsBtnColor {
             background-color: @trimpsPurple  !important;
+
+            &:hover {
+                color: white !important;
+            }
         }
 
         &.btn-default {
-            background-color: @trimpsDefault  !important
+            background-color: @trimpsDefault  !important;
+
+            &:hover {
+                color: black !important;
+            }
         }
+
+        &.settingBtn0 {
+            background: @trimpsRed  !important
+        }
+
+        &.settingBtn3 {
+            background-color: @trimpsLightBlue  !important;
+        }
+
     }
 
     #voidAlert {
