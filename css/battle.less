@@ -1,5 +1,4 @@
 @-moz-document domain("trimps.github.io") {
-    @import "variables.less";
 
     .battleCell {
         border: none !important;
@@ -36,12 +35,12 @@
         right              : 0;
         bottom             : 0;
         background-position: 15% 55% !important;
-        background-image   : url('data:image/svg+xml,%3Csvg%20fill%3D%22%23000000%22%20height%3D%2220px%22%20width%3D%2220px%22%20version%3D%221.1%22%20id%3D%22Capa_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20viewBox%3D%220%200%2057%2057%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20d%3D%22M57%2C0h-8.837L18.171%2C29.992l-4.076-4.076l-1.345-4.034c-0.22-0.663-0.857-1.065-1.55-0.98%20c-0.693%2C0.085-1.214%2C0.63-1.268%2C1.327l-0.572%2C7.438l5.982%2C5.982L4.992%2C46H2.274C1.02%2C46%2C0%2C47.02%2C0%2C48.274v6.452%20C0%2C55.98%2C1.02%2C57%2C2.274%2C57h6.452C9.98%2C57%2C11%2C55.98%2C11%2C54.726v-3.421l10-10l6.021%2C6.021l6.866-1.145%20c0.685-0.113%2C1.182-0.677%2C1.21-1.37c0.028-0.693-0.422-1.295-1.096-1.464l-3.297-0.824l-4.043-4.043L57%2C8.489V0z%20M9%2C54.726%20C9%2C54.877%2C8.877%2C55%2C8.726%2C55H2.274C2.123%2C55%2C2%2C54.877%2C2%2C54.726v-6.452C2%2C48.123%2C2.123%2C48%2C2.274%2C48h0.718h5.734%20C8.877%2C48%2C9%2C48.123%2C9%2C48.274v5.031V54.726z%20M11%2C48.477v-0.203C11%2C47.02%2C9.98%2C46%2C8.726%2C46H7.82l8.938-8.938l1.417%2C1.417l1.411%2C1.411%20L11%2C48.477z%20M30.942%2C44.645l-3.235%2C0.54l-5.293-5.293l0%2C0l-2.833-2.833l-8.155-8.155l0.292-3.796l0.63%2C1.89l4.41%2C4.41l0%2C0%20l4.225%2C4.225l8.699%2C8.699L30.942%2C44.645z%20M25.247%2C37.066l-2.822-2.822l-2.839-2.839L48.991%2C2h4.243L23.829%2C31.406%20c-0.391%2C0.391-0.391%2C1.023%2C0%2C1.414c0.195%2C0.195%2C0.451%2C0.293%2C0.707%2C0.293s0.512-0.098%2C0.707-0.293L55%2C3.062v4.592L25.247%2C37.066z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E') !important;
+        background-image   : @swordIcon;
         background-size    : contain;
         background-repeat  : no-repeat !important;
         display            : inline-block;
         animation          : rotateUpDown 2s infinite ease-in-out;
-        transform-origin   : 0% 100%;
+        transform-origin   : 0 100%;
         /* Bottom center of the element */
     }
 
@@ -97,7 +96,7 @@
 
     .fightBtn {
         max-width: 99%;
-        padding  : 0px !important;
+        padding  : 0 !important;
         .button-style(@backdrop,
             @shadow-border);
 
@@ -148,4 +147,10 @@
     #voidAlert {
         background-color: @trimpsPurple  !important;
     }
+
+    /* Zone indicator */
+    #battleSideTitle {
+        @borderRadius();
+    }
+
 }
