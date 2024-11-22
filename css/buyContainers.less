@@ -43,6 +43,14 @@
         box-shadow: none;
     }
 
+    div>span.alert.badge {
+        display: none;
+    }
+
+    div.upgradeThing.thingColorCanAfford:has(span.alert.badge) {
+        color: gold;
+    }
+
     #outerBuyContainer>#buyTabs>ul#buyTabsUl.nav,
     #buyTabs {
 

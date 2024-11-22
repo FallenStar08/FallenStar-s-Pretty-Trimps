@@ -18,6 +18,7 @@
     @trimpsLightBlue : #287280;
     @trimpsPurple    : #5A4080;
     @trimpsDefault   : #e6e6e6;
+    @trimpsVoid      : #390E65;
     @farmIcon        : url('data:image/svg+xml,<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M9 12V21M9 12L10.8462 7L15 5L19.1538 7L21 12V21H9M9 12V8M9 21H3V6C3 4.34315 4.34315 3 6 3C7.65685 3 9 4.34315 9 6V8M9 8H3M13 15H17V21H13V15ZM14.5 10V11H15.5V10H14.5Z" stroke="%23000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="--darkreader-inline-stroke: %23e8e6e3;" data-darkreader-inline-stroke=""></path></g></svg>');
     @woodIcon        : url('data:image/svg+xml,<svg viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" fill="%23000000" style="--darkreader-inline-fill: %23000000;" data-darkreader-inline-fill=""><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:none;stroke:%23ffffff;stroke-miterlimit:10;stroke-width:1.88px;}</style><style class="darkreader darkreader--sync" media="screen"></style></defs><circle class="cls-1" cx="6.82" cy="17.18" r="5.32"></circle><circle class="cls-1" cx="6.82" cy="17.18" r="2.35"></circle><path class="cls-1" d="M20.94,10.59,10.59,20.94a5.32,5.32,0,0,0-7.53-7.53L13.41,3.06a5.32,5.32,0,0,1,7.53,7.53Z"></path><line class="cls-1" x1="9.35" y1="12.41" x2="12.79" y2="8.97"></line><line class="cls-1" x1="21.94" y1="4.36" x2="18.18" y2="8.12"></line><line class="cls-1" x1="13.73" y1="13.18" x2="17.06" y2="9.85"></line><line class="cls-1" x1="15.76" y1="5.41" x2="19.06" y2="2.12"></line></g></svg>');
     @foodIcon        : url('data:image/svg+xml,<svg fill="%23ffffff" viewBox="0 -3.84 122.88 122.88" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="--darkreader-inline-fill: %23181a1b; --darkreader-inline-stroke: %23e8e6e3;" xml:space="preserve" data-darkreader-inline-fill="" stroke="%23ffffff" data-darkreader-inline-stroke=""><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><g><path d="M29.03,100.46l20.79-25.21l9.51,12.13L41,110.69C33.98,119.61,20.99,110.21,29.03,100.46L29.03,100.46z M53.31,43.05 c1.98-6.46,1.07-11.98-6.37-20.18L28.76,1c-2.58-3.03-8.66,1.42-6.12,5.09L37.18,24c2.75,3.34-2.36,7.76-5.2,4.32L16.94,9.8 c-2.8-3.21-8.59,1.03-5.66,4.7c4.24,5.1,10.8,13.43,15.04,18.53c2.94,2.99-1.53,7.42-4.43,3.69L6.96,18.32 c-2.19-2.38-5.77-0.9-6.72,1.88c-1.02,2.97,1.49,5.14,3.2,7.34L20.1,49.06c5.17,5.99,10.95,9.54,17.67,7.53 c1.03-0.31,2.29-0.94,3.64-1.77l44.76,57.78c2.41,3.11,7.06,3.44,10.08,0.93l0.69-0.57c3.4-2.83,3.95-8,1.04-11.34L50.58,47.16 C51.96,45.62,52.97,44.16,53.31,43.05L53.31,43.05z M65.98,55.65l7.37-8.94C63.87,23.21,99-8.11,116.03,6.29 C136.72,23.8,105.97,66,84.36,55.57l-8.73,11.09L65.98,55.65L65.98,55.65z"></path></g></g></svg>');
@@ -208,8 +209,12 @@
     #tooltipDiv {
         @backdrop();
         @borderRadius();
-        border: none !important;
-        @shadow-border();
+    }
+
+    /* building queue */
+    .queueItem {
+        @backdrop();
+        @borderRadius()
     }
 
     /*NOTE battle.less */
@@ -340,6 +345,10 @@
             }
         }
 
+        &#voidMapsBtn {
+            background-color: @trimpsVoid  !important;
+        }
+
         &.btn-default {
             background-color: @trimpsDefault  !important;
 
@@ -408,6 +417,14 @@
     .alert.badge {
         background: black !important;
         box-shadow: none;
+    }
+
+    div>span.alert.badge {
+        display: none;
+    }
+
+    div.upgradeThing.thingColorCanAfford:has(span.alert.badge) {
+        color: gold;
     }
 
     #outerBuyContainer>#buyTabs>ul#buyTabsUl.nav,
