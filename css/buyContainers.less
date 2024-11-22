@@ -1,3 +1,5 @@
+// <reference path="../css/variables.less" />.
+
 @-moz-document domain("trimps.github.io") {
     .workBtn {
         border-radius: 12px;
@@ -11,7 +13,7 @@
             @shadow-border);
 
         &.fireBtnFiring {
-            background: @trimpsRed;
+            background: @trimpsRed  !important;
         }
     }
 
@@ -47,24 +49,22 @@
         @borderRadius();
     }
 
+    .thingColorCanAfford {
+        color       : white;
+        border-color: green;
+        .thingColorCommon();
+    }
+
     .thingColorCanNotAfford {
         background-color: #00000070 !important;
         color           : #f4a95f94;
-        width           : auto;
-        height          : 80px;
-        min-width       : 100px;
-        margin          : 1px;
-        border-radius   : 12px;
+        .thingColorCommon();
     }
 
-    .thingColorCanAfford {
-        color        : white;
-        border-color : green;
-        width        : auto;
-        height       : 80px;
-        min-width    : 100px;
-        margin       : 1px;
-        border-radius: 12px;
+    .thingColorFiringJob {
+        color           : white;
+        background-color: @trimpsRed  !important;
+        .thingColorCommon();
     }
 
     .buyTab {
