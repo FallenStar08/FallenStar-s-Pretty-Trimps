@@ -61,11 +61,12 @@
 
 	/* Log top left & right*/
 	#StoryFilter {
-		border-radius: 12px 0px 0px 0px;
+		border-radius: 12px 0 0 0;
+		border       : 5px;
 	}
 
 	#logConfigBtn {
-		border-radius: 0px 12px 0px 0px !important;
+		border-radius: 0 12px 0 0 !important;
 	}
 
 	/* AutoTrap toggle */
@@ -81,6 +82,12 @@
 		&.colorDanger {
 			background: @trimpsRed  !important;
 		}
+	}
+
+	/* tooltips */
+	#tooltipDiv {
+		@backdrop();
+		@borderRadius();
 	}
 
 }
