@@ -34,6 +34,7 @@
   /*BACKGROUND*/
   #innerWrapper,
   body {
+    overflow-x: hidden;
     background: linear-gradient(135deg, #011d4a, #007eb9, #6b006f, #2f2f2f2e) !important;
     background-size: 400% 400%;
     animation: gradientAnimation 10s ease infinite;
@@ -54,7 +55,6 @@
   .jobThing,
   .buildingThing,
   .workBtn,
-  #fireBtn,
   #food,
   #wood,
   #metal,
@@ -88,10 +88,32 @@
   }
   /* Log top left & right*/
   #StoryFilter {
-    border-radius: 12px 0px 0px 0px;
+    border-radius: 12px 0 0 0;
+    border: 5px;
   }
   #logConfigBtn {
-    border-radius: 0px 12px 0px 0px !important;
+    border-radius: 0 12px 0 0 !important;
+  }
+  /* AutoTrap toggle */
+  #autoTrapBtn {
+    background-color: rgba(48, 51, 50, 0.38) !important;
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease-in-out;
+    border: 0px !important;
+    margin: 0px;
+    padding: 0.3rem;
+    border-radius: 12px !important;
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+  }
+  #autoTrapBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3) !important;
+  }
+  #autoTrapBtn.colorSuccess {
+    background: #194A19 !important;
+  }
+  #autoTrapBtn.colorDanger {
+    background: #441817 !important;
   }
   /*ANCHOR battle.less */
   .battleCell {
@@ -128,7 +150,7 @@
     background-repeat: no-repeat !important;
     display: inline-block;
     animation: rotateUpDown 2s infinite ease-in-out;
-    transform-origin: 0% 100%;
+    transform-origin: 0 100%;
     /* Bottom center of the element */
   }
   #mapLevelContainer > * {
@@ -173,25 +195,29 @@
     color: #8e8e4c;
   }
   .fightBtn {
-    margin: 1px !important;
-    padding: 0px !important;
+    max-width: 99%;
+    padding: 0 !important;
     background-color: rgba(48, 51, 50, 0.38) !important;
     backdrop-filter: blur(10px);
     transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
     border: 0px !important;
     margin: 0px;
     padding: 0.3rem;
-    box-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
   }
   .fightBtn:hover {
     transform: scale(1.05);
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.3) !important;
   }
+  .fightBtn:hover {
+    color: white;
+  }
   .fightBtn.btn-primary,
   .fightBtn.btn-info {
     background-color: #002B3B !important;
   }
-  .fightBtn.btn-success {
+  .fightBtn.btn-success,
+  .fightBtn.settingBtn1 {
     background-color: #194A19 !important;
   }
   .fightBtn.btn-warning {
@@ -200,14 +226,39 @@
   .fightBtn.heirloomsBtnColor {
     background-color: #5A4080 !important;
   }
+  .fightBtn.heirloomsBtnColor:hover {
+    color: white !important;
+  }
   .fightBtn.btn-default {
     background-color: #e6e6e6 !important;
+  }
+  .fightBtn.btn-default:hover {
+    color: black !important;
+  }
+  .fightBtn.settingBtn0 {
+    background: #441817 !important;
+  }
+  .fightBtn.settingBtn3 {
+    background-color: #287280 !important;
   }
   #voidAlert {
     background-color: #5A4080 !important;
   }
   /*ANCHOR buyContainers.less */
-  .workBtn,
+  .workBtn {
+    border-radius: 12px;
+    background-color: rgba(48, 51, 50, 0.38) !important;
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+    border: 0px !important;
+    margin: 0px;
+    padding: 0.3rem;
+  }
+  .workBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3) !important;
+  }
   #fireBtn {
     border-radius: 12px;
     background-color: rgba(48, 51, 50, 0.38) !important;
@@ -218,10 +269,12 @@
     margin: 0px;
     padding: 0.3rem;
   }
-  .workBtn:hover,
   #fireBtn:hover {
     transform: scale(1.05);
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.3) !important;
+  }
+  #fireBtn.fireBtnFiring {
+    background: #441817 !important;
   }
   .thing:hover {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.3) !important;
@@ -266,7 +319,7 @@
     background-color: rgba(48, 51, 50, 0) !important;
     backdrop-filter: blur(10px);
     transition: background-color 0.3s ease-in-out;
-    border-radius: 12px 12px 0px 0px;
+    border-radius: 12px 12px 0 0;
   }
   .buyTab > a {
     border: none !important;
