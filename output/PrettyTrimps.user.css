@@ -528,11 +528,6 @@
 
 	/*NOTE resources.less */
 
-    #food {
-        border-radius: 12px 0px 0px 0px;
-        @resourceStyle()
-    }
-
     #metal {
         border-radius: 0px 0px 0px 12px;
         @resourceStyle()
