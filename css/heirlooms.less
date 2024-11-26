@@ -1,0 +1,67 @@
+@-moz-document domain("trimps.github.io") {
+    #heirloomWrapper {
+        background: transparent !important;
+    }
+
+    #heirloomWrapper>#heirloomTitleBar,
+    #equippedHeirlooms,
+    #carriedHeirlooms,
+    #extraHeirlooms,
+    #modReplaceBox,
+    #modUpgradeBox,
+    .selectedHeirloomItem {
+        @resourceStyle();
+        @backdrop();
+        @borderRadius();
+    }
+
+    .heirBtn,
+    .heirloomMod {
+        .button-style(@backdrop,
+            @shadow-border);
+        border-radius: 6px !important;
+
+        &.colorInfo {
+            background: @trimpsLightBlue  !important
+        }
+
+        &.colorPrimary {
+            background: @trimpsBlue  !important
+        }
+
+        &.colorDanger {
+            background: @trimpsRed  !important
+        }
+
+        &#sortHeirloomsBtn {
+            background: @trimpsVoid  !important;
+            padding   : 2px;
+
+            &:hover {
+                opacity: 1
+            }
+        }
+    }
+
+    #ShieldEquipped,
+    #StaffEquipped {
+        @backdrop();
+        border-radius: 6px !important;
+        @shadow-border();
+    }
+
+    #equippedHeirloomsBtnGroup {
+        border       : none;
+        border-radius: 0 0 12px 12px;
+        background   : transparent;
+
+        &#equippedHeirloomsBtnGroup>.heirloomBtnActive {
+            margin-bottom: 1%;
+            background   : @trimpsVoid  !important;
+
+            &:hover {
+                opacity: 1
+            }
+        }
+    }
+}
