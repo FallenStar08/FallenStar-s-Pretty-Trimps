@@ -119,6 +119,22 @@
             background-position: 0% 50%;
         }
     }
+
+    /* used for leaf icon in maps */
+    @keyframes smooth-rainbow {
+        0% {
+            background-position: 0%;
+        }
+
+        50% {
+            background-position: 100%;
+        }
+
+        100% {
+            background-position: 0%;
+        }
+
+    }
 	/*NOTE general.less */
 
 	/*BACKGROUND*/
@@ -317,6 +333,24 @@
     .glyphicon-th {
         color: #8e8e4c
     }
+
+    .icon-leaf2 {
+        background: linear-gradient(90deg,
+                #ff9999,
+                #ffcc99,
+                #ffff99,
+                #ccff99,
+                #99ccff,
+                #9999ff,
+                #cc99ff);
+        background-size        : 200% 200%;
+        -webkit-background-clip: text;
+        background-clip        : text;
+        -webkit-text-fill-color: transparent;
+        animation              : smooth-rainbow 3s infinite linear;
+    }
+
+
 
     .fightBtn {
         max-width: 99%;
