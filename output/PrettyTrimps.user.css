@@ -266,7 +266,6 @@
         display            : inline-block;
         animation          : rotateUpDown 2s infinite ease-in-out;
         transform-origin   : 0 100%;
-        /* Bottom center of the element */
     }
 
     #mapLevelContainer>* {
