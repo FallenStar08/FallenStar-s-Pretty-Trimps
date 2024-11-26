@@ -8,7 +8,7 @@
 ==/UserStyle== */
 
 @-moz-document domain("trimps.github.io") {
-    /*NOTE variables.less */
+	/*NOTE variables.less */
     @backdropBlur    : blur(10px);
     @trimpsGreen     : #194A19;
     @trimpsYellow    : #574800;
@@ -119,105 +119,111 @@
             background-position: 0% 50%;
         }
     }
+	/*NOTE general.less */
 
-    /*NOTE general.less */
+	/*BACKGROUND*/
+	#innerWrapper,
+	body {
+		overflow-x     : hidden;
+		background     : linear-gradient(135deg, #011d4a, #007eb9, #6b006f, #2f2f2f2e) !important;
+		background-size: 400% 400%;
+		animation      : gradientAnimation 10s ease infinite;
+	}
 
-    /*BACKGROUND*/
-    #innerWrapper,
-    body {
-        overflow-x     : hidden;
-        background     : linear-gradient(135deg, #011d4a, #007eb9, #6b006f, #2f2f2f2e) !important;
-        background-size: 400% 400%;
-        animation      : gradientAnimation 10s ease infinite;
-    }
+	/*Progress Bars*/
+	.progress,
+	.innerFightBar,
+	.fightBar {
+		margin-left  : 3px !important;
+		margin-right : 3px !important;
+		border-radius: 50px;
+	}
 
-    /*Progress Bars*/
-    .progress,
-    .innerFightBar,
-    .fightBar {
-        margin-left  : 3px !important;
-        margin-right : 3px !important;
-        border-radius: 50px;
-    }
+	#trapArea {
+		border: none !important;
+	}
 
-    #trapArea {
-        border: none !important;
-    }
+	.efficientNo,
+	.upgradeThing,
+	.jobThing,
+	.buildingThing,
+	.workBtn,
+	#food,
+	#wood,
+	#metal,
+	#science,
+	#battleContainer,
+	#miscColumn>*,
+	#queueContainer,
+	#outerBuyContainer,
+	#buyTabs,
+	#buyTabsUI,
+	#trimpsColumn>*,
+	#logColumn>*,
+	#numTabs>ul.nav>* {
+		@backdrop();
+	}
 
-    .efficientNo,
-    .upgradeThing,
-    .jobThing,
-    .buildingThing,
-    .workBtn,
-    #food,
-    #wood,
-    #metal,
-    #science,
-    #battleContainer,
-    #miscColumn>*,
-    #queueContainer,
-    #outerBuyContainer,
-    #buyTabs,
-    #buyTabsUI,
-    #trimpsColumn>*,
-    #logColumn>*,
-    #numTabs>ul.nav>* {
-        @backdrop();
-    }
+	/* removes border around trap thing */
+	div#trimps,
+	#queueContainer {
+		border-radius: 12px !important;
+		@shadow-border();
+		border: none !important;
+	}
 
-    /* removes border around trap thing */
-    div#trimps,
-    #queueContainer {
-        border-radius: 12px !important;
-        @shadow-border();
-        border: none !important;
-    }
+	#battleContainer,
+	#outerBuyContainer,
+	#logContainer {
+		@resourceStyle();
+		@borderRadius();
+	}
 
-    #battleContainer,
-    #outerBuyContainer,
-    #logContainer {
-        @resourceStyle();
-        @borderRadius();
-    }
+	/* Log top left & right*/
+	#StoryFilter {
+		border-radius: 12px 0 0 0;
+		border       : 5px;
+	}
 
-    /* Log top left & right*/
-    #StoryFilter {
-        border-radius: 12px 0 0 0;
-        border       : 5px;
-    }
+	#logConfigBtn {
+		border-radius: 0 12px 0 0 !important;
+	}
 
-    #logConfigBtn {
-        border-radius: 0 12px 0 0 !important;
-    }
+	/* AutoTrap toggle */
+	#autoTrapBtn {
+		.button-style();
+		@borderRadius();
+		@shadow-border();
 
-    /* AutoTrap toggle */
-    #autoTrapBtn {
-        .button-style();
-        @borderRadius();
-        @shadow-border();
+		&.colorSuccess {
+			background: @trimpsGreen  !important;
+		}
 
-        &.colorSuccess {
-            background: @trimpsGreen  !important;
-        }
+		&.colorDanger {
+			background: @trimpsRed  !important;
+		}
+	}
 
-        &.colorDanger {
-            background: @trimpsRed  !important;
-        }
-    }
+	/* tooltips */
+	#tooltipDiv {
+		@backdrop();
+		@borderRadius();
+		border: none;
+		@shadow-border();
+	}
 
-    /* tooltips */
-    #tooltipDiv {
-        @backdrop();
-        @borderRadius();
-    }
+	/* building queue */
+	.queueItem {
+		@backdrop();
+		@borderRadius()
+	}
 
-    /* building queue */
-    .queueItem {
-        @backdrop();
-        @borderRadius()
-    }
+	/* fixes border for trimps section */
+	#turkimpBuff {
+		border-radius: 12px 0 0 0;
+	}
 
-    /*NOTE battle.less */
+	/*NOTE battle.less */
 
     .battleCell {
         border: none !important;
@@ -345,7 +351,7 @@
             }
         }
 
-        &#voidMapsBtn {
+        &.voidMapsBtn {
             background-color: @trimpsVoid  !important;
         }
 
@@ -376,7 +382,7 @@
         @borderRadius();
     }
 
-    /*NOTE buyContainers.less */
+	/*NOTE buyContainers.less */
     .workBtn {
         border-radius: 12px;
         .button-style(@backdrop,
@@ -461,7 +467,11 @@
         }
     }
 
-    /*NOTE icons.less */
+    #buyContainer {
+        scrollbar-color: #8eb5ffc9 #fff0;
+        scrollbar-width: thin;
+    }
+	/*NOTE icons.less */
     #wood::before {
         content          : "";
         position         : absolute;
@@ -517,7 +527,7 @@
         background-repeat: no-repeat !important;
     }
 
-    /*NOTE resources.less */
+	/*NOTE resources.less */
 
     #food {
         border-radius: 12px 0px 0px 0px;
@@ -558,5 +568,6 @@
         margin-top   : 0;
         border-radius: 0px 0px 12px 0px;
     }
+
 
 }
