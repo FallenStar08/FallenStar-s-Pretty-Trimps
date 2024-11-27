@@ -226,6 +226,10 @@
 		@borderRadius();
 		border: none;
 		@shadow-border();
+
+		&>hr {
+			display: none
+		}
 	}
 
 	/* building queue */
