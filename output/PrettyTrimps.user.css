@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           FallenStar's Pretty Trimps
 @namespace      github.com/openstyles/stylus
-@version        1.1.0
+@version        1.2.0
 @description    Makes Trimps epic
 @author         FallenStar
 @preprocessor 	less
@@ -135,6 +135,42 @@
         }
 
     }
+
+    /* boing (achivement) */
+    @keyframes popupBounceIn {
+        0% {
+            transform: translate(-50%, -50%) scale(0.7);
+            opacity  : 0;
+        }
+
+        60% {
+            transform: translate(-50%, -50%) scale(1.1);
+            opacity  : 1;
+        }
+
+        80% {
+            transform: translate(-50%, -50%) scale(0.95);
+        }
+
+        100% {
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+
+    /* Glowy explosion like waboom (achivement) */
+    @keyframes glowExplosion {
+        0% {
+            @shadow-border();
+        }
+
+        50% {
+            box-shadow: 0 0 50px 25px rgba(255, 255, 255, 0.8), 0 0 100px 50px rgba(255, 255, 255, 0.6);
+        }
+
+        100% {
+            @shadow-border();
+        }
+    }
 	/*NOTE general.less */
 
 	/*BACKGROUND*/
@@ -241,6 +277,32 @@
 	/* fixes border for trimps section */
 	#turkimpBuff {
 		border-radius: 12px 0 0 0;
+	}
+
+	/* Achievement popup styling */
+	#achievementPopup {
+		position : fixed;
+		top      : 10%;
+		left     : 50%;
+		transform: translate(-50%, -50%) scale(0.7);
+		opacity  : 0;
+		@backdrop();
+		color  : white;
+		padding: 20px 40px;
+		border : none;
+		@shadow-border();
+		border-radius: 12px;
+
+		z-index       : 1000;
+		pointer-events: none;
+		transition    : opacity 0.3s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
+	/* animation for when it pops up */
+	#achievementPopup[style*="display: block"] {
+		opacity       : 1;
+		pointer-events: auto;
+		animation     : popupBounceIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards, glowExplosion 1s ease-out 0.8s forwards;
 	}
 
 	/*NOTE battle.less */

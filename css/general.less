@@ -107,4 +107,30 @@
 		border-radius: 12px 0 0 0;
 	}
 
+	/* Achievement popup styling */
+	#achievementPopup {
+		position : fixed;
+		top      : 10%;
+		left     : 50%;
+		transform: translate(-50%, -50%) scale(0.7);
+		opacity  : 0;
+		@backdrop();
+		color  : white;
+		padding: 20px 40px;
+		border : none;
+		@shadow-border();
+		border-radius: 12px;
+
+		z-index       : 1000;
+		pointer-events: none;
+		transition    : opacity 0.3s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
+	/* animation for when it pops up */
+	#achievementPopup[style*="display: block"] {
+		opacity       : 1;
+		pointer-events: auto;
+		animation     : popupBounceIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards, glowExplosion 1s ease-out 0.8s forwards;
+	}
+
 }

@@ -126,4 +126,40 @@
         }
 
     }
+
+    /* boing (achivement) */
+    @keyframes popupBounceIn {
+        0% {
+            transform: translate(-50%, -50%) scale(0.7);
+            opacity  : 0;
+        }
+
+        60% {
+            transform: translate(-50%, -50%) scale(1.1);
+            opacity  : 1;
+        }
+
+        80% {
+            transform: translate(-50%, -50%) scale(0.95);
+        }
+
+        100% {
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+
+    /* Glowy explosion like waboom (achivement) */
+    @keyframes glowExplosion {
+        0% {
+            @shadow-border();
+        }
+
+        50% {
+            box-shadow: 0 0 50px 25px rgba(255, 255, 255, 0.8), 0 0 100px 50px rgba(255, 255, 255, 0.6);
+        }
+
+        100% {
+            @shadow-border();
+        }
+    }
 }
